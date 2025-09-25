@@ -49,14 +49,35 @@ public class GradeCalculator {
         int weight_sc = av_qu * 3 / 10;
         int weight_hw = av_hw * 3 / 10;
         int total_grade = weight_hw + weight_sc + weight_qu;
+        char letter_grade = 'X';
 
-        System.out.printf("=== Grade Report for " + name + " === \n\n");
-        System.out.printf("Category Averages: ");
-        System.out.printf("Tests " + av_sc + "\n");
-        System.out.printf("Quizzes " + av_qu + "\n");
-        System.out.printf("Homeworks " + av_hw + "\n");
-        System.out.printf("Weighted Final Grade " + total_grade);
+        if (total_grade >= 90)
+        { letter_grade = 'A';
+        }
+        else if (89 >= total_grade && total_grade >= 80) {
+            letter_grade = 'B'; }
+            else if (79 >= total_grade && total_grade >= 70) {
+                letter_grade = 'C';
+            }
+            else if (69 >= total_grade && total_grade >= 60) {
+                letter_grade = 'D'; }
+                else {
+                    letter_grade = 'F';
+            }
 
+
+
+
+
+
+
+        System.out.printf("=== Grade Report for " + name + " === \n");
+        System.out.printf("Category Averages: " + "\n");
+        System.out.printf("Tests: " + av_sc + "\n");
+        System.out.printf("Quizzes: " + av_qu + "\n");
+        System.out.printf("Homeworks: " + av_hw + "\n");
+        System.out.printf("Weighted Final Grade: " + total_grade + "\n");
+        System.out.printf("Letter Grade: " + letter_grade + "\n");
 
 
 
